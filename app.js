@@ -3,13 +3,14 @@
 var path = require("path");
 var express = require("express");
 var zipdb = require("zippity-do-dah");
-var ForecastIO = require("forecastio");
-
+//var Forecast = require('forecast.io');
+var DarkSky = require("dark-sky");
+var forecast = new DarkSky("a0ff92480a56c23f6a8ab208161ad33d");
 // creates an Express application
 var app = express();
 
 //Creates an ForecastIO object with your API key
-var weather = new ForecastIO("aa75523fac44edb2bff1ab453b28613f");
+//var weather = new ForecastIO("a0ff92480a56c23f6a8ab208161ad33d");
 
 // Serves static files out of public
 app.use(express.static(path.resolve(__dirname,"public")));
@@ -55,7 +56,7 @@ app.use(function(req,res) {
     res.status(404).render("404");
 });
 
-// Starte the app on port 3000
+// Start the app on port 3000
 app.listen(3000);
     
     
