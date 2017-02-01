@@ -24,7 +24,7 @@ app.get("/", function(req, res){
 });
 
 // Captures the specified ZIP code and passes it as req.params[0]
-app.get(/^\/(\d{6})$/, function(req, res, next){
+app.get(/^\/(\d{5})$/, function(req, res, next){
     var zipcode = req.params[0];
 // Grabs the location data with the ZIP code    
     var location = zipdb.zipcode(zipcode);
